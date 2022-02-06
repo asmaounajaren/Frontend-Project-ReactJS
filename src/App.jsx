@@ -7,7 +7,7 @@ import Cart from "./pages/Cart";
 // import { Router } from "@material-ui/icons";
 // import { Switch } from "@material-ui/core";
 // import Pay from "./Pay";
-// import Success from "./Success";
+import Success from "./pages/Success";
 import {
   BrowserRouter as Router,
   Switch,
@@ -36,6 +36,9 @@ const App = () => {
         </Route>
         <Route path="/cart">
           <Cart/>
+        </Route>
+        <Route path="/success">
+          <Success/>
         </Route>
       </Switch>
     </Router>
