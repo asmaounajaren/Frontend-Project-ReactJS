@@ -7,10 +7,9 @@ import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
-import publicRequest from "../requestMethods";
-
 
 const Container = styled.div``;
 
@@ -149,7 +148,7 @@ const Product = () => {
 
   const handleClick = () => {
     dispatch(
-      addProduct({ ...product, quantity })
+      addProduct({ ...product, quantity, color, size })
     );
   };
   return (
@@ -165,20 +164,20 @@ const Product = () => {
           <Desc>{product.desc}</Desc>
           <Price>$ {product.price}</Price>
           <FilterContainer>
-            {/* <Filter>
+            <Filter>
               <FilterTitle>Color</FilterTitle>
               {product.color?.map((c) => (
                 <FilterColor color={c} key={c} onClick={() => setColor(c)} />
               ))}
-            </Filter> */}
-            {/* <Filter>
+            </Filter>
+            <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
                 ))}
               </FilterSize>
-            </Filter> */}
+            </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
