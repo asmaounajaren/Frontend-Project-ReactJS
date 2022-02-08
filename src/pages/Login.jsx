@@ -1,15 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { login } from "../redux/apiCalls";
-<<<<<<< HEAD
 import {mobile} from "../responsive";
 import {useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-=======
-import { mobile } from "../responsive";
-import { useDispatch, useSelector } from "react-redux";
-
->>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -76,7 +70,6 @@ const Link = styled.a`
 `;
 
 const Error = styled.span`
-<<<<<<< HEAD
 color: red;
 `
 
@@ -88,40 +81,15 @@ const Login = () => {
   const handleClick = (e)=>{
     e.preventDefault();
     login(dispatch,{username,password});
-=======
-   color:red; 
-`
-
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
-
-  const handleClick = (e) => {
-    e.preventDefault()
-    login(dispatch, { username, password });
->>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
   }
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-<<<<<<< HEAD
           <Input placeholder="username" onChange={(e)=>setUsername(e.target.value)}/>
           <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)}/>
           <Button onClick={handleClick} disabled={isFetching} >LOGIN</Button>
-=======
-          <Input
-            placeholder="username"
-            onChange={(e) => setUsername(e.target.value)} />
-          <Input
-            placeholder="password"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)} />
-          <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
->>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
           {error && <Error>Something went wrong...</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>

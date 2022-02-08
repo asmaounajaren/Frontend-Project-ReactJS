@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 //import { Add, Remove, StayPrimaryPortraitRounded } from "@material-ui/icons";
-=======
-import { Add, Remove } from "@material-ui/icons";
->>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -170,7 +166,6 @@ const Cart = () => {
 
   const onToken = (token) => {
     setStripeToken(token);
-<<<<<<< HEAD
   }
 //  console.log(stripeToken);
 useEffect(()=>{
@@ -188,24 +183,6 @@ useEffect(()=>{
   }
   stripeToken &&  makeRequest();
 },[stripeToken,cart.total,history]);
-=======
-  };
-
-  useEffect(() => {
-    const makeRequest = async () => {
-      try {
-        const res = await userRequest.post("/checkout/payment", {
-          tokenId: stripeToken.id,
-          amount: 500,
-        });
-        history.push("/success", {
-          stripeData: res.data,
-          products: cart, });
-      } catch {}
-    };
-    stripeToken && makeRequest();
-  }, [stripeToken, cart.total, history]);
->>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
   return (
     <Container>
       <Navbar />
