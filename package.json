@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
-    "@reduxjs/toolkit": "^1.7.1",
+    "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -16,6 +16,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-stripe-checkout": "^2.6.3",
+<<<<<<< HEAD
+=======
+    "redux-devtools-extension": "^2.13.9",
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
