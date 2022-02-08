@@ -1,9 +1,15 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { login } from "../redux/apiCalls";
+<<<<<<< HEAD
 import {mobile} from "../responsive";
 import {useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+=======
+import { mobile } from "../responsive";
+import { useDispatch, useSelector } from "react-redux";
+
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -11,7 +17,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    url("https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
       center;
   background-size: cover;
   display: flex;
@@ -52,8 +58,13 @@ const Button = styled.button`
   cursor: pointer;
   margin-bottom: 10px;
   &:disabled{
+<<<<<<< HEAD
     color: green;
     cursor: not-allowed;
+=======
+    color:black;
+    cursor:not-allowed;
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
   }
 `;
 
@@ -65,6 +76,7 @@ const Link = styled.a`
 `;
 
 const Error = styled.span`
+<<<<<<< HEAD
 color: red;
 `
 
@@ -76,15 +88,40 @@ const Login = () => {
   const handleClick = (e)=>{
     e.preventDefault();
     login(dispatch,{username,password});
+=======
+   color:red; 
+`
+
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    login(dispatch, { username, password });
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
   }
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
+<<<<<<< HEAD
           <Input placeholder="username" onChange={(e)=>setUsername(e.target.value)}/>
           <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)}/>
           <Button onClick={handleClick} disabled={isFetching} >LOGIN</Button>
+=======
+          <Input
+            placeholder="username"
+            onChange={(e) => setUsername(e.target.value)} />
+          <Input
+            placeholder="password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)} />
+          <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
           {error && <Error>Something went wrong...</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>

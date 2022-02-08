@@ -13,10 +13,20 @@ import {
   Switch,
   Route, Redirect
 } from "react-router-dom";
+<<<<<<< HEAD
 import { useSelector } from "react-redux";
 //import Products from "./components/Products";
 const App = () => {
   const user = useSelector((state)=>state.user.currentUser);
+=======
+import Products from "./components/Products";
+import { useSelector } from "react-redux";
+
+
+
+const App = () => {
+  const user = useSelector(state=>state.user.currentUser);
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
   return(
     <Router>
       <Switch>

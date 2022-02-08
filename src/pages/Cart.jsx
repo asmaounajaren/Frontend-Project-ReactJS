@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //import { Add, Remove, StayPrimaryPortraitRounded } from "@material-ui/icons";
+=======
+import { Add, Remove } from "@material-ui/icons";
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -6,13 +10,11 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
 
-
-const KEY=process.env.REACT_APP_STRIPE;
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
 
@@ -56,7 +58,6 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
-
 `;
 
 const Info = styled.div`
@@ -163,12 +164,13 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  const cart = useSelector(state=>state.cart);
+  const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
 
-  const onToken = (token)=>{
+  const onToken = (token) => {
     setStripeToken(token);
+<<<<<<< HEAD
   }
 //  console.log(stripeToken);
 useEffect(()=>{
@@ -186,6 +188,24 @@ useEffect(()=>{
   }
   stripeToken &&  makeRequest();
 },[stripeToken,cart.total,history]);
+=======
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: 500,
+        });
+        history.push("/success", {
+          stripeData: res.data,
+          products: cart, });
+      } catch {}
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total, history]);
+>>>>>>> 21f36d3c3d5b71f7d282e0cd6298ab99e7325601
   return (
     <Container>
       <Navbar />
@@ -202,30 +222,36 @@ useEffect(()=>{
         </Top>
         <Bottom>
           <Info>
-            {cart.products.map(product=>(
-            <Product>
-              <ProductDetail>
-                <Image src={product.img} />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> {product.title}
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> {product._id}
-                  </ProductId>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                {/* <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>{product.quantity}</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer> */}
-                <ProductPrice>$ {product.price}</ProductPrice>
-              </PriceDetail>
-            </Product>))}
+            {cart.products.map((product) => (
+              <Product>
+                <ProductDetail>
+                  <Image src={product.img} />
+                  <Details>
+                    <ProductName>
+                      <b>Product:</b> {product.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>ID:</b> {product._id}
+                    </ProductId>
+                    <ProductColor color={product.color} />
+                    <ProductSize>
+                      <b>Size:</b> {product.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Add />
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                    <Remove />
+                  </ProductAmountContainer>
+                  <ProductPrice>
+                    $ {product.price * product.quantity}
+                  </ProductPrice>
+                </PriceDetail>
+              </Product>
+            ))}
             <Hr />
-
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
@@ -246,7 +272,7 @@ useEffect(()=>{
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Templates Shop"
+              name="FATempltes"
               image="https://avatars.githubusercontent.com/u/1486366?v=4"
               billingAddress
               shippingAddress
