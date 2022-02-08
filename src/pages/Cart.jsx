@@ -1,4 +1,4 @@
-import { Add, Remove, StayPrimaryPortraitRounded } from "@material-ui/icons";
+//import { Add, Remove, StayPrimaryPortraitRounded } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -89,14 +89,14 @@ const ProductName = styled.span``;
 
 const ProductId = styled.span``;
 
-const ProductColor = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-`;
+// const ProductColor = styled.div`
+//   width: 20px;
+//   height: 20px;
+//   border-radius: 50%;
+//   background-color: ${(props) => props.color};
+// `;
 
-const ProductSize = styled.span``;
+//const ProductSize = styled.span``;
 
 const PriceDetail = styled.div`
   flex: 1;
@@ -106,17 +106,17 @@ const PriceDetail = styled.div`
   justify-content: center;
 `;
 
-const ProductAmountContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-`;
+// const ProductAmountContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 20px;
+// `;
 
-const ProductAmount = styled.div`
-  font-size: 24px;
-  margin: 5px;
-  ${mobile({ margin: "5px 15px" })}
-`;
+// const ProductAmount = styled.div`
+//   font-size: 24px;
+//   margin: 5px;
+//   ${mobile({ margin: "5px 15px" })}
+// `;
 
 const ProductPrice = styled.div`
   font-size: 30px;
@@ -178,8 +178,10 @@ useEffect(()=>{
         tokenId: stripeToken.id,
         amount: 500,
       })
-      history.push("/success",{data: res.data});
-
+      history.push("/success",{
+        stripeData: res.data,
+        products: cart,
+      });
     }catch{}
   }
   stripeToken &&  makeRequest();
