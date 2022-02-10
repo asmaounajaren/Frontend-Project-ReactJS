@@ -6,6 +6,7 @@ import { mobile } from "../responsive";
 import { Link } from 'react-router-dom';
 import Products from "../components/Products";
 import ProductList from "../pages/ProductList";
+import { useHistory } from "react-router-dom";
 
 
 const Container = styled.div`
@@ -94,9 +95,7 @@ const Slider = () => {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
-  const ProductL=()=>{
-    
-  }
+  let history=useHistory();
 
   return (
     <Container>
@@ -112,7 +111,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button onClick={() => ProductL()}>SHOW NOW</Button>
+              <Button onClick={() =>history.push(`/products/${item.Products}`) }>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}

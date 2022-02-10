@@ -198,7 +198,6 @@ useEffect(()=>{
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
@@ -255,7 +254,7 @@ useEffect(()=>{
               token={onToken}
               stripeKey={KEY}
             >
-              <Button>CHECKOUT NOW</Button>
+              <TopButton style={{backgroundColor:"black",color:"white"}}>CHECKOUT NOW</TopButton>
             </StripeCheckout>
           </Summary>
         </Bottom>
