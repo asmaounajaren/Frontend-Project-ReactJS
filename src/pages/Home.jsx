@@ -13,7 +13,9 @@ const Home = () => {
       <Announcement />
       <Navbar />
       <Slider />
+      <h1 style={{textAlign:"center"}}>Categories</h1>
       <Categories />
+      <h1 style={{textAlign:"center"}}>Products</h1>
       <Products/>
       <Newsletter/>
       <Footer/>

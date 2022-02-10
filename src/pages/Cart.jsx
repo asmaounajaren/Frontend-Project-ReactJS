@@ -234,11 +234,11 @@ useEffect(()=>{
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>$ 0.00</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>$ 0.00</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
@@ -246,7 +246,7 @@ useEffect(()=>{
             </SummaryItem>
             <StripeCheckout
               name="Templates Shop"
-              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              image="https://i.ibb.co/PcgS808/fatlogo.png"
               billingAddress
               shippingAddress
               description={`Your total is $${cart.total}`}
