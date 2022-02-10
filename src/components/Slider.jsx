@@ -3,6 +3,10 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
+import { Link } from 'react-router-dom';
+import Products from "../components/Products";
+import ProductList from "../pages/ProductList";
+
 
 const Container = styled.div`
   width: 100%;
@@ -90,6 +94,9 @@ const Slider = () => {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
+  const ProductL=()=>{
+    
+  }
 
   return (
     <Container>
@@ -105,7 +112,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Button onClick={() => ProductL()}>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}

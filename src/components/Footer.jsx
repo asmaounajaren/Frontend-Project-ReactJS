@@ -7,6 +7,7 @@ import {
   Room,
   Twitter,
 } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -90,22 +91,22 @@ const Footer = () => {
       <Left>
         <Logo>FATemplates.</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+        Choose from our online shop templates. Explore items created by 
+        our global community of independent designers and developers, 
+        confident they're hand-reviewed by us.
         </Desc>
         <SocialContainer>
-          <SocialIcon color="3B5999">
-            <Facebook />
+          <SocialIcon color="4267B2">
+          <a href="https://facebook.com" style={{textDecoration:"none",color:"white"}}><Facebook /></a>
           </SocialIcon>
           <SocialIcon color="E4405F">
-            <Instagram />
+          <a href="https://instagram.com" style={{textDecoration:"none",color:"white"}}><Instagram /></a>
           </SocialIcon>
           <SocialIcon color="55ACEE">
-            <Twitter />
+          <a href="https://twitter.com" style={{textDecoration:"none",color:"white"}}><Twitter /></a>
           </SocialIcon>
           <SocialIcon color="E60023">
-            <Pinterest />
+          <a href="https://Pinterest.com" style={{textDecoration:"none",color:"white"}}><Pinterest /></a>
           </SocialIcon>
         </SocialContainer>
       </Left>
@@ -114,26 +115,24 @@ const Footer = () => {
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
+          <ListItem>Templates</ListItem>
+          <ListItem>Categories</ListItem>
+          <ListItem>Professional</ListItem>
+          <ListItem>Business</ListItem>
+          <ListItem>Marketing</ListItem>
+          <ListItem>Ecommerce</ListItem>
         </List>
       </Center>
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+          <Room style={{marginRight:"10px"}}/> 80 000 Tiznit, Sous Massa
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+          <Phone style={{marginRight:"10px"}}/> +212 00 00 00 000
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
+          <MailOutline style={{marginRight:"10px"}} /> fzwaocoders@gmail.com
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
