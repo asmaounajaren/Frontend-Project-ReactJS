@@ -65,6 +65,7 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  color: black;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -83,11 +84,17 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>FATemplates</Logo>
+          <Link to="/" style={{ textDecoration: 'none' , color:"black"}}>
+          <Logo >FATemplates</Logo>
+          </Link>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <Link to="/register" style={{ textDecoration: 'none' }}>
+            <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+            <MenuItem>SIGN IN</MenuItem>
+          </Link>
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">

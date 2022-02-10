@@ -1,11 +1,7 @@
 import {
-  Facebook,
-  Instagram,
   MailOutline,
   Phone,
-  Pinterest,
   Room,
-  Twitter,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -95,7 +91,7 @@ const Footer = () => {
         our global community of independent designers and developers, 
         confident they're hand-reviewed by us.
         </Desc>
-        <SocialContainer>
+        {/* <SocialContainer>
           <SocialIcon color="4267B2">
           <a href="https://facebook.com" style={{textDecoration:"none",color:"white"}}><Facebook /></a>
           </SocialIcon>
@@ -108,7 +104,7 @@ const Footer = () => {
           <SocialIcon color="E60023">
           <a href="https://Pinterest.com" style={{textDecoration:"none",color:"white"}}><Pinterest /></a>
           </SocialIcon>
-        </SocialContainer>
+        </SocialContainer> */}
       </Left>
       <Center>
         <Title>Useful Links</Title>
@@ -126,7 +122,7 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 80 000 Tiznit, Sous Massa
+          <Room style={{marginRight:"10px"}}/> 85 000 Tiznit, Sous Massa
         </ContactItem>
         <ContactItem>
           <Phone style={{marginRight:"10px"}}/> +212 00 00 00 000

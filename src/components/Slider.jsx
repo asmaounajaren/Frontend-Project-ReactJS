@@ -9,6 +9,7 @@ import ProductList from "../pages/ProductList";
 import { useHistory } from "react-router-dom";
 
 
+
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -111,7 +112,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button onClick={() =>history.push(`/products/${item.Products}`) }>SHOW NOW</Button>
+              {/* <Button>SHOW NOW</Button> */}
             </InfoContainer>
           </Slide>
         ))}
